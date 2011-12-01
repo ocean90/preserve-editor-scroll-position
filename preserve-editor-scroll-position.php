@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Preserve Editor Scroll Position
-Plugin URI: http://wpgrafie.de/
+Plugin URI: http://wpgrafie.de/wp-plugins/preserve-editor-scroll-position/
 Description: This plugin will recover the old scoll position in your Editor after saving. Either HTML or visuel editor.
 Version: 0.1.0
 Author: ocean90
@@ -145,4 +145,4 @@ final class Preserve_Editor_Scroll_Position {
 }
 
 // Please load. Thanks.
-add_action( 'plugins_loaded', array( 'Preserve_Editor_Scroll_Position', 'init' ) );
+add_action( 'admin_init', array( 'Preserve_Editor_Scroll_Position', 'init' ) );

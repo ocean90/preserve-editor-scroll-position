@@ -5,14 +5,14 @@ Requires at least: 3.2
 Tested up to: 3.3-RC1
 Stable tag: 0.1.0
 
-Recovers the old scoll position in your Editor after saving. Either HTML or visuel editor.
+Recovers the old scroll position in your Editor after saving. Either HTML or visual editor.
 
 == Description ==
 
-Everytime you edit and save a post the page will be reloaded. This means all scroll positions will be reseted.
+Every time you edit and save a post the page will be reloaded. That means all scroll positions will be reset.
 Not really UX friendly.
 
-This plugin recovers the old scoll position in your Editor after saving. Either HTML or visuel editor.
+This plugin recovers the old scroll position in your Editor after saving. Either HTML or visual editor.
 
 Pretty? Then install now.
 
