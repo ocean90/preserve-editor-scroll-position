@@ -8,7 +8,7 @@ Author: ocean90
 Author URI: http://wpgrafie.de/
 License: GPLv2 or later
 
-	Copyright (C) 2011  Dominik Schilling
+	Copyright (C) 2011 Dominik Schilling
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -40,7 +40,6 @@ if ( ! class_exists( 'WP' ) ) {
  * The class will help you to recover the old scoll position in your Editor.
  * Either HTML or visuel editor.
  *
- * @version 0.1.0
  */
 final class Preserve_Editor_Scroll_Position {
 	/**
