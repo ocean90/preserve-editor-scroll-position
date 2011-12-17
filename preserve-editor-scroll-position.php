@@ -3,7 +3,7 @@
 Plugin Name: Preserve Editor Scroll Position
 Plugin URI: http://wpgrafie.de/wp-plugins/preserve-editor-scroll-position/
 Description: This plugin will recover the old scoll position in your Editor after saving. Either HTML or visuel editor.
-Version: 0.1.0
+Version: 0.1.1
 Author: ocean90
 Author URI: http://wpgrafie.de/
 License: GPLv2 or later
@@ -49,11 +49,10 @@ final class Preserve_Editor_Scroll_Position {
 	 */
 	public static function init() {
 		add_filter( 'redirect_post_location', array( __CLASS__, 'add_query_arg' ) );
-
 		add_action( 'edit_form_advanced', array( __CLASS__, 'add_input_field' ) );
 		add_action( 'edit_page_form', array( __CLASS__, 'add_input_field' ) );
-
 		add_filter( 'tiny_mce_before_init', array( __CLASS__, 'extend_tiny_mce' ) );
+		add_action( 'after_wp_tiny_mce', array( __CLASS__, 'print_js' ) );
 	}
 
 	/**
@@ -65,9 +64,6 @@ final class Preserve_Editor_Scroll_Position {
 		$position = ! empty( $_GET['scrollto'] ) ? $_GET['scrollto'] : 0;
 
 		printf( '<input type="hidden" id="scrollto" name="scrollto" value="%d"/>', esc_attr( $position ) );
-
-		// Print Javascript data
-		add_action( 'admin_print_footer_scripts', array( __CLASS__, 'print_js' ), 55 ); // Print after Editor JS.
 	}
 
 
@@ -110,35 +106,36 @@ final class Preserve_Editor_Scroll_Position {
 	 *
 	 * @since 0.1.0
 	 */
-	public static function print_js() {
+	public static function print_js( $mce_settings ) {
 		?>
-	<script>
-	( function( $ ) {
-		$( '#post' ).submit( function() {
-			// TinyMCE or HTML Editor?
-			scrollto =
-				$('#content' ).is(':hidden') ?
-				$('#content_ifr').contents().find( 'body' ).scrollTop() :
-				$('#content' ).scrollTop();
+<script>
+( function( $ ) {
+	$( '#post' ).submit( function() {
+		// TinyMCE or HTML Editor?
+		scrollto =
+			$('#content' ).is(':hidden') ?
+			$('#content_ifr').contents().find( 'body' ).scrollTop() :
+			$('#content' ).scrollTop();
 
-			// Save scrollto value
-			$( '#scrollto' ).val( scrollto );
-		} );
+		// Save scrollto value
+		$( '#scrollto' ).val( scrollto );
+	} );
 
-		// Only HTML editor: scroll to scrollto value
-		$( '#content' ).scrollTop( $( '#scrollto' ).val() );
-	} )( jQuery );
-
-	/*
-	 * Callback function for TinyMCE setup event
-	 * See http://www.tinymce.com/wiki.php/API3:event.tinymce.Editor.onInit
-	 */
-	function rich_scroll( ed ) {
-		ed.onInit.add( function() {
-			jQuery( '#content_ifr' ).contents().find( 'body' ).scrollTop( jQuery( '#scrollto' ).val() );
-		} );
-	};
-	</script>
+	// Only HTML editor: scroll to scrollto value
+	$( '#content' ).scrollTop( $( '#scrollto' ).val() );
+} )( jQuery );
+<?php if ( wp_default_editor() == 'tinymce' && ! empty( $mce_settings ) ) : ?>
+/*
+ * Callback function for TinyMCE setup event
+ * See http://www.tinymce.com/wiki.php/API3:event.tinymce.Editor.onInit
+ */
+function rich_scroll( ed ) {
+	ed.onInit.add( function() {
+		jQuery( '#content_ifr' ).contents().find( 'body' ).scrollTop( jQuery( '#scrollto' ).val() );
+	} );
+};
+<?php endif; ?>
+</script>
 		<?php
 	}
 }

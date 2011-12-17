@@ -1,8 +1,8 @@
 === Preserve Editor Scroll Position ===
 Contributors: ocean90
-Tags: editor, TinyMCE, scroll, ux
+Tags: editor, TinyMCE, scroll, UX
 Requires at least: 3.2
-Tested up to: 3.3-RC1
+Tested up to: 3.4-aplpha
 Stable tag: 0.1.0
 
 Recovers the old scroll position in your Editor after saving. Either HTML or visual editor.
@@ -43,6 +43,9 @@ To upload the plugin through WordPress, instead of FTP:
 1. Upload the downloaded zip file on the 'Add New' plugins screen (see the 'Upload' tab) in your WordPress admin area and activate.
 
 == Changelog ==
+
+= 0.1.1 =
+* Changed hook for printing javascript code
 
 = 0.1.0 =
 * First release
