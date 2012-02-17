@@ -1,39 +1,35 @@
 <?php
 /*
-Plugin Name: Preserve Editor Scroll Position
-Plugin URI: http://wpgrafie.de/wp-plugins/preserve-editor-scroll-position/
-Description: This plugin will recover the old scoll position in your Editor after saving. Either HTML or visuel editor.
-Version: 0.1.1
-Author: ocean90
-Author URI: http://wpgrafie.de/
-License: GPLv2 or later
-
-	Copyright (C) 2011 Dominik Schilling
-
-	This program is free software; you can redistribute it and/or
-	modify it under the terms of the GNU General Public License
-	as published by the Free Software Foundation; either version 2
-	of the License, or (at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-*/
+ * Plugin Name: Preserve Editor Scroll Position
+ * Version: 0.1.1
+ * Description: This plugin will recover the old scoll position in your Editor after saving. Either HTML or visuel editor.
+ * Author: Dominik Schilling
+ * Author URI: http://wphelper.de/
+ * Plugin URI: http://wpgrafie.de/wp-plugins/preserve-editor-scroll-position/
+ * 
+ * License: GPLv2 or later
+ * 
+ * 	Copyright (C) 2011-2012 Dominik Schilling
+ * 
+ * 	modify it under the terms of the GNU General Public License
+ * 	as published by the Free Software Foundation; either version 2
+ * 	of the License, or (at your option) any later version.
+ * 
+ * 	This program is distributed in the hope that it will be useful,
+ * 	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * 	GNU General Public License for more details.
+ * 
+ * 	You should have received a copy of the GNU General Public License
+ * 	along with this program; if not, write to the Free Software
+ * 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 
 /*
  * Don't call this file directly.
- *
- * Props Sergej Müller.
  */
 if ( ! class_exists( 'WP' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
-	exit();
+	die();
 }
 
 /**
