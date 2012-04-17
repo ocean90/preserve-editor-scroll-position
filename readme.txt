@@ -1,15 +1,15 @@
 === Preserve Editor Scroll Position ===
 Contributors: ocean90
-Tags: editor, TinyMCE, scroll, UX
+Tags: Editor, TinyMCE, Scrolling, UX, Post
 Requires at least: 3.2
-Tested up to: 3.4-aplpha
+Tested up to: 3.4
 Stable tag: 0.1.0
 
 Recovers the old scroll position in your Editor after saving. Either HTML or visual editor.
 
 == Description ==
 
-Every time you edit and save a post the page will be reloaded. That means all scroll positions will be reset.
+Every time you edit and save a post the page will be reloaded. That means all scroll positions will be resetted.
 Not really UX friendly.
 
 This plugin recovers the old scroll position in your Editor after saving. Either HTML or visual editor.
