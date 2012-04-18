@@ -3,7 +3,7 @@ Contributors: ocean90
 Tags: Editor, TinyMCE, Scrolling, UX, Post
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 0.1.0
+Stable tag: 0.2
 
 Recovers the old scroll position in your Editor after saving. Either HTML or visual editor.
 
@@ -44,8 +44,9 @@ To upload the plugin through WordPress, instead of FTP:
 
 == Changelog ==
 
-= 0.1.1 =
+= 0.2.0 =
 * Changed hook for printing javascript code
+* Cleanup
 
 = 0.1.0 =
 * First release

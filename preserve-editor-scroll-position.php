@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Preserve Editor Scroll Position
- * Version: 0.1.1
+ * Version: 0.2
  * Description: This plugin will recover the old scoll position in your Editor after saving. Either HTML or visuel editor.
  * Author: Dominik Schilling
  * Author URI: http://wphelper.de/
