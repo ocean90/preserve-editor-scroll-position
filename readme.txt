@@ -19,7 +19,7 @@ This plugin recovers the old scroll position in your Editor after saving. Either
 
 **Sounds pretty good? Install now!**
 
-= Feedback = 
+= Feedback =
 If you want, you can drop me a line @[ocean90](http://twitter.com/ocean90) on Twitter or @[Dominik Schilling](https://plus.google.com/101675293278434581718/) on Google+.
 
 = More =
